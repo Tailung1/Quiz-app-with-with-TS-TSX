@@ -6,12 +6,12 @@ export default function Quiz() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const question = data[currentIndex].question;
   const options = data[currentIndex].options;
-//   const CorrectAnswer = data[currentIndex].correctAnswer;
-//   const [score, setScore] = useState<number>(0);
-//   const [showScore, setShowScore] = useState<boolean>(false);
+  const [score, setScore] = useState<number>(0);
+  const [showScore, setShowScore] = useState<boolean>(false);
 
-  function onSelectOption(option:string) {
-    console.log(option)
+  function onSelectOption(option: string) {
+    showScore? {score} : <div></div>
+    
   }
   return (
     <div>

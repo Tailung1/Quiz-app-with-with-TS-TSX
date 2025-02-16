@@ -14,12 +14,13 @@ const Question: React.FC<IQuestInfo> = ({
       <h1>{question}</h1>
       <ul>
         {options.map((option) => (
-          <button key={option}>
-            <li onClick={() => onSelectOption(option)}>{option}</li>
-          </button>
+          <li key={option}>
+            {" "}
+            <button onClick={() => onSelectOption(option)}>{option}</button>
+          </li>
         ))}
       </ul>
     </div>
   );
 };
-export default Question
+export default Question;
