@@ -9,37 +9,33 @@ export default function Quiz() {
   const [score, setScore] = useState<number>(0);
   const [showScore, setShowScore] = useState<boolean>(false);
 
-  {showScore? <p>{showScore}</p>:null}
-  
-
-  const check = (selectedOption:string) => {
-    showScore
-      ? { score }
-      : selectedOption === CorrectAnswer
-      ? setScore(score + 1)
-      : null;
+  const check = (selectedOption: string) => {
+    selectedOption === CorrectAnswer ? setScore(score + 1) : null;
     const indexIndicator = currentIndex + 1;
     if (indexIndicator < data.length) {
       setCurrentIndex(indexIndicator);
     } else {
-        setShowScore(true)
-         {
-           showScore ? <p>{score}</p> : null;
-         }
+      setShowScore(true);
     }
   };
 
   return (
     <div>
-      {showScore ? <p>{score}</p> : null}
-      <h1>{Question}</h1>
-      <ul>
-        {Options.map((option) => (
-          <li onClick={() => check(option)} key={option}>
-            {option}
-          </li>
-        ))}
-      </ul>
+      {showScore ? (
+        <p>{score}</p>
+      ) : (
+        <div>
+          {" "}
+          <h1>{Question}</h1>
+          <ul>
+            {Options.map((option) => (
+              <li onClick={() => check(option)} key={option}>
+                {option}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
