@@ -12,7 +12,7 @@ export default function Quiz() {
   {showScore? <p>{showScore}</p>:null}
   
 
-  const check = (selectedOption) => {
+  const check = (selectedOption:string) => {
     showScore
       ? { score }
       : selectedOption === CorrectAnswer
