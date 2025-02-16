@@ -1,7 +1,7 @@
 interface IQuestInfo {
   question: string;
   options: string[];
-  onSelectOption: (option: string) => void;
+  onSelectOption: (selectedOption: string) => void;
 }
 
 const Question: React.FC<IQuestInfo> = ({
